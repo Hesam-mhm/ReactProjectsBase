@@ -1,0 +1,205 @@
+.monitoring-bold {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.mb35 {
+    margin-bottom: 5rem !important;
+}
+
+.mb4 {
+    margin-bottom: 4rem !important;
+}
+
+@media print {
+    .mychart {
+        width: 300rem !important;
+    }
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn FD";
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-FD-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+    font-family: "Vazirmatn FD" !important;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Default overflow hidden for larger screens */
+}
+
+.svg-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.theme-light-hide {
+    display: none;
+}
+
+.theme-dark-hide {
+    display: none;
+}
+
+.custom-label-ltr {
+    left: 2rem !important;
+    right: inherit !important;
+    transform-origin: left !important;
+}
+
+.custom-label-ltr+.MuiOutlinedInput-root fieldset {
+    text-align: left;
+}
+
+
+/* You might need to adjust visibility in specific contexts */
+
+[data-bs-theme='light'] .theme-light-hide {
+    display: block;
+}
+
+[data-bs-theme='dark'] .theme-dark-hide {
+    display: block;
+}
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Optional: add background overlay */
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 6px solid #f3f3f3;
+    /* Light gray */
+    border-top: 6px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-container {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+}

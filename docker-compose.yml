@@ -1,0 +1,60 @@
+services:
+  # Frontend React Application
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    container_name: mahyar-frontend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+    volumes:
+      # Optional: Mount for development (uncomment if needed)
+      # - ./src:/app/src:ro
+      # - ./public:/app/public:ro
+      - nginx-logs:/var/log/nginx
+
+  # Optional: Backend service placeholder
+  # Uncomment and configure if you have a backend API
+  # backend:
+  #   image: your-backend-image:latest
+  #   container_name: mahyar-backend
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=your-database-url
+  #     - NODE_ENV=production
+  #   networks:
+  #     - app-network
+  #   depends_on:
+  #     - database
+
+  # Optional: Database service placeholder
+  # Uncomment and configure if you need a database
+  # database:
+  #   image: postgres:15
+  #   container_name: mahyar-database
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_DB=mahyar_db
+  #     - POSTGRES_USER=mahyar_user
+  #     - POSTGRES_PASSWORD=your-secure-password
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  nginx-logs:
+    driver: local
+  # postgres-data:
+  #   driver: local 

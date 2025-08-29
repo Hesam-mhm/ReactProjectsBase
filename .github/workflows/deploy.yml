@@ -1,0 +1,16 @@
+
+name: Trigger Jenkins Job
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Jenkins Job via API
+        run: |
+          curl -X POST "http://185.105.187.114:2000/job/MahyarDev/build?token=mahyar_dev" \
+          --user "andia:1180cc1c7878f6be66023d44c65d728ab3"
